@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="editTextTripName" type="id" />
+    <item name="editTextTripDescription" type="id" />
+    <item name="buttonSaveTrip" type="id" />
+    <item name="listViewTrips" type="id" />
+    <item name="inputLayoutDescription" type="id" />
+    <item name="buttonUpdate" type="id" />
+    <item name="buttonDelete" type="id" />
+    <item name="inputLayoutDetailDescription" type="id" />
+    <item name="inputLayoutDetailName" type="id" />
+</resources>

@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="?android:colorBackground"
+    tools:ignore="ExtraText">
+
+//nazev vyletu
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/inputLayoutName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Název výletu"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editTripName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textCapWords"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+//popis vyletu
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/inputLayoutDescription"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Popis výletu"
+        app:layout_constraintTop_toBottomOf="@id/inputLayoutName"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="12dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editTripDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minLines="3"
+            android:inputType="textMultiLine|textCapSentences"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+//vyhledavani mista
+    <SearchView
+        android:id="@+id/searchView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:queryHint="Hledat místo..."
+        app:layout_constraintTop_toBottomOf="@id/inputLayoutDescription"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="12dp"/>
+
+//mapa
+    <com.google.android.gms.maps.MapView
+        android:id="@+id/mapView"
+        android:layout_width="0dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="36dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/searchView" />
+//nahled fotky
+    <ImageView
+        android:id="@+id/photoPreview"
+        android:layout_width="0dp"
+        android:layout_height="180dp"
+        android:layout_marginTop="16dp"
+        android:contentDescription="Náhled fotky"
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/mapView" />
+//tlacitko pro vybirani fotky
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/selectPhotoButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="?attr/colorPrimary"
+        android:onClick="selectPhoto"
+        android:text="Vybrat fotku"
+        android:textColor="@android:color/white"
+        app:cornerRadius="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/photoPreview" />
+//tlacitko pro ulozeni vyletu
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/buttonSaveTrip"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="?attr/colorPrimary"
+        android:onClick="saveTrip"
+        android:text="Uložit výlet"
+        android:textColor="@android:color/white"
+        app:cornerRadius="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/selectPhotoButton"
+        app:layout_constraintVertical_bias="0.0" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

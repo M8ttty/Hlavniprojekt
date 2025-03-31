@@ -1,0 +1,9 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <style name="Base.Theme.Traveldiary" parent="Theme.Material3.Dark.NoActionBar">
+        <item name="colorPrimary">@color/teal_200</item>
+        <item name="colorOnPrimary">@color/black</item>
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimary</item>
+    </style>
+
+    <style name="Theme.Traveldiary" parent="Base.Theme.Traveldiary" />
+</resources>
